@@ -67,17 +67,7 @@ jobs:
       - name: Run tests
         env:
           RAILS_ENV: test
-        run: bin/rails test
-
-      - name: Run system tests (if exists)
-        env:
-          RAILS_ENV: test
-        run: |
-          if [ -d test/system ] && ls test/system/*_test.rb 1> /dev/null 2>&1; then
-            bin/rails test:system
-          else
-            echo "No system tests yet. Skipping."
-          fi
+        run: bundle exec rspec
 
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
