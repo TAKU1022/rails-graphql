@@ -49,7 +49,7 @@ module RailsGraphql
         routing_specs: false,
         controller_specs: false,
         request_specs: true
-      g.factory_bot dir: 'spec/factories'
+      g.factory_bot dir: "spec/factories"
     end
   end
 end
